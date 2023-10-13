@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
 
 # AND101 Project 4 - CodeMath
@@ -63,3 +64,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+=======
+# Cooking-Reduction-Calculator
+>>>>>>> fb9a5a7 (Create README.md)
