@@ -35,7 +35,7 @@ The following EXTRA features are implemented:
 
 Here's a video / GIF that demos all of the app's implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
+<img src='https://github.com/nohabean/Cooking-Reduction-Calculator/blob/master/AND101%20Project%204.gif' title='Video Demo' width='300px' alt='Video Demo' />
 
 GIF created with **ScreenToGif**
 
