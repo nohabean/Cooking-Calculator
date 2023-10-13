@@ -8,7 +8,7 @@ Time spent: **10** hours spent in total
 
 ## Summary
 
-**Cooking Reduction Calculator** is an android app that **allows the user to input standard cooking measurements and enter a number to divide and reduce the measurement by.**
+**Cooking Reduction Calculator** is an android app that **allows the user to input standard cooking measurements and enter a number to divide/reduce the measurement by.**
 
 If I had to describe this project in three (3) emojis, they would be: **🍳📏➗**
 
@@ -35,7 +35,7 @@ The following EXTRA features are implemented:
 
 Here's a video / GIF that demos all of the app's implemented features:
 
-<img src='https://github.com/nohabean/Cooking-Reduction-Calculator/blob/master/AND101%20Project%204.gif' title='Video Demo' width='300px' alt='Video Demo' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
 
 GIF created with **ScreenToGif**
 
@@ -46,7 +46,7 @@ GIF created with **ScreenToGif**
 
 ## Notes
 
-From this project I learned how to create functions, use click listeners, and use toasts. Future functionality will be for conversions between units when reducing a measurement and only displaying results in available measurement sizes using standard cooking measurements.
+Here's a place for any other notes on the app, it's creation process, or what you learned this unit!
 
 ## License
 
