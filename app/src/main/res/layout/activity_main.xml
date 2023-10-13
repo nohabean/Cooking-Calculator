@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Cooking Measurements Calculator "
+        android:textSize="22dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/cupSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="50dp" />
+
+    <TextView
+        android:id="@+id/cupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CUP"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/cupSwitch"
+        app:layout_constraintTop_toTopOf="@id/cupSwitch"
+        app:layout_constraintBottom_toBottomOf="@+id/cupSwitch"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:id="@+id/convertCupInputWhole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertCupInputFraction1"
+        app:layout_constraintTop_toTopOf="@id/cupSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/cupSwitch" />
+
+    <EditText
+        android:id="@+id/convertCupInputFraction1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertCupFraction"
+        app:layout_constraintTop_toTopOf="@id/cupSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/cupSwitch" />
+
+    <TextView
+        android:id="@+id/convertCupFraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="34dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertCupInputFraction2"
+        app:layout_constraintTop_toTopOf="@id/cupSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/cupSwitch" />
+
+    <EditText
+        android:id="@+id/convertCupInputFraction2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toTopOf="@id/cupSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/cupSwitch" />
+
+    <Switch
+        android:id="@+id/tablespoonSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/cupSwitch"
+        app:layout_constraintTop_toBottomOf="@id/cupSwitch"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tablespoonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TBSP"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/tablespoonSwitch"
+        app:layout_constraintTop_toTopOf="@id/tablespoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@+id/tablespoonSwitch"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:id="@+id/convertTablespoonInputWhole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTablespoonInputFraction1"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toTopOf="@id/tablespoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/tablespoonSwitch" />
+
+    <EditText
+        android:id="@+id/convertTablespoonInputFraction1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTablespoonFraction"
+        app:layout_constraintTop_toTopOf="@id/tablespoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/tablespoonSwitch" />
+
+    <TextView
+        android:id="@+id/convertTablespoonFraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="34dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTablespoonInputFraction2"
+        app:layout_constraintTop_toTopOf="@id/tablespoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/tablespoonSwitch" />
+
+    <EditText
+        android:id="@+id/convertTablespoonInputFraction2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toTopOf="@id/tablespoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/tablespoonSwitch" />
+
+    <Switch
+        android:id="@+id/teaspoonSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/cupSwitch"
+        app:layout_constraintTop_toBottomOf="@id/tablespoonSwitch"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/teaspoonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TSP"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintTop_toTopOf="@id/teaspoonSwitch"
+        app:layout_constraintStart_toEndOf="@id/teaspoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@+id/teaspoonSwitch"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:id="@+id/convertTeaspoonInputWhole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTeaspoonInputFraction1"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toTopOf="@id/teaspoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/teaspoonSwitch" />
+
+    <EditText
+        android:id="@+id/convertTeaspoonInputFraction1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTeaspoonFraction"
+        app:layout_constraintTop_toTopOf="@id/teaspoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/teaspoonSwitch" />
+
+    <TextView
+        android:id="@+id/convertTeaspoonFraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="34dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/convertTeaspoonInputFraction2"
+        app:layout_constraintTop_toTopOf="@id/teaspoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/teaspoonSwitch" />
+
+    <EditText
+        android:id="@+id/convertTeaspoonInputFraction2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="number"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toTopOf="@id/teaspoonSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/teaspoonSwitch" />
+
+    <EditText
+        android:id="@+id/divider"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/header"
+        app:layout_constraintEnd_toEndOf="@id/header"
+        app:layout_constraintTop_toBottomOf="@id/teaspoonSwitch"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:hint="Enter Divider"
+        android:inputType="number"
+        android:textColorHint="@color/gray"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:cornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/green"/>
+
+    <TextView
+        android:id="@+id/cupResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CUP: "
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/calculate"
+        app:layout_constraintTop_toBottomOf="@id/calculate"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/cupCalculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/cupResult"
+        app:layout_constraintEnd_toEndOf="@id/calculate"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tablespoonResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TBSP: "
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/calculate"
+        app:layout_constraintTop_toBottomOf="@id/cupResult"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tablespoonCalculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tablespoonResult"
+        app:layout_constraintEnd_toEndOf="@id/calculate"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/teaspoonResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TSP: "
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/calculate"
+        app:layout_constraintTop_toBottomOf="@id/tablespoonResult"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/teaspoonCalculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/teaspoonResult"
+        app:layout_constraintEnd_toEndOf="@id/calculate"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:backgroundTint="@color/green"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:cornerRadius="7dp"
+        app:layout_constraintTop_toBottomOf="@id/teaspoonCalculation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
