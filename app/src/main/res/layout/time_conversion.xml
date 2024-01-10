@@ -95,7 +95,9 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:hint="Enter Recipe Cook Time"
-        android:textColorHint="@color/gray" />
+        android:textColorHint="@color/black"
+        android:background="@color/gray"
+        app:cornerRadius="10dp" />
 
     <Spinner
         android:id="@+id/timeUnits"
