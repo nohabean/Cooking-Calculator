@@ -55,9 +55,11 @@
         app:layout_constraintStart_toStartOf="@id/originalTemp"
         android:layout_marginTop="5dp"
         android:textColor="@color/white"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:hint="Enter Recipe Temperature"
+        android:textColorHint="@color/gray" />
 
     <Spinner
         android:id="@+id/tempUnits"
@@ -89,9 +91,11 @@
         app:layout_constraintStart_toStartOf="@id/originalTemp"
         android:layout_marginTop="5dp"
         android:textColor="@color/white"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:hint="Enter Recipe Cook Time"
+        android:textColorHint="@color/gray" />
 
     <Spinner
         android:id="@+id/timeUnits"
