@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="temperatureUnits">
+        <item>°F</item>
+        <item>°C</item>
+    </string-array>
+
+    <string-array name="timeUnits">
+        <item>mins</item>
+        <item>hrs</item>
+    </string-array>
+</resources>

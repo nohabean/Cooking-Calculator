@@ -6,12 +6,23 @@
         <item name="colorPrimary">@color/black</item>
 
         <item name="android:switchStyle">@style/CustomSwitchStyle</item>
+
+        <item name="android:spinnerItemStyle">@style/CustomSpinnerTextColor</item>
     </style>
 
     <!-- Custom switch style -->
     <style name="CustomSwitchStyle" parent="Widget.Material3.CompoundButton.Switch">
         <!-- Set the custom drawable for the track -->
         <item name="android:track">@drawable/custom_track</item>
+    </style>
+
+    <!-- Custom spinner text color -->
+    <style name="CustomSpinnerTextColor" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="backgroundTint">@color/white</item>
     </style>
 
     <style name="Theme.CookingMeasurementsConverter" parent="Base.Theme.CookingMeasurementsConverter" />
