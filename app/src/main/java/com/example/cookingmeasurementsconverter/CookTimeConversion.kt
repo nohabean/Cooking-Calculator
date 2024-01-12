@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.w3c.dom.Text
 import kotlin.math.sqrt
@@ -40,33 +41,51 @@ class CookTimeConversion : AppCompatActivity() {
         var resultTitle = findViewById<TextView>(R.id.conversionResult)
         var result = findViewById<TextView>(R.id.result)
         var resultUnits = findViewById<TextView>(R.id.resultUnits)
+        result.visibility = View.INVISIBLE
 
         modifyTimeButton.setOnClickListener {
-            isModifyingTime = true
-            desiredChangeTitle.text = "Desired Cook Time"
-            desiredInput.visibility = View.VISIBLE
-            desiredUnits.visibility = View.VISIBLE
-            calculateButton.visibility = View.VISIBLE
-            desiredUnits.text = originalTimeSpinner.selectedItem.toString()
-        }
-        modifyTempButton.setOnClickListener {
-            isModifyingTime = false
-            desiredChangeTitle.text = "Desired Cook Temperature"
-            desiredInput.visibility = View.VISIBLE
-            desiredUnits.visibility = View.VISIBLE
-            calculateButton.visibility = View.VISIBLE
-            desiredUnits.text = originalTempSpinner.selectedItem.toString()
-        }
-        calculateButton.setOnClickListener {
-            if (isModifyingTime == true) {
-                resultTitle.text = "NEW COOK TEMPERATURE"
-                resultUnits.text = originalTempSpinner.selectedItem.toString()
-                result.text = modifyCookTime(originalTempInput, originalTimeInput, desiredInput)
+            if (originalTimeInput.text.isNullOrEmpty() || originalTempInput.text.isNullOrEmpty()) {
+                Toast.makeText(this, "Please enter temperature and cook time", Toast.LENGTH_LONG).show()
             }
-            else if (isModifyingTime == false) {
-                resultTitle.text = "NEW COOK TIME"
-                resultUnits.text = originalTimeSpinner.selectedItem.toString()
-                result.text = modifyCookTemp(originalTempInput, originalTimeInput, desiredInput)
+            else {
+                isModifyingTime = true
+                desiredChangeTitle.text = "Desired Cook Time"
+                desiredInput.visibility = View.VISIBLE
+                desiredUnits.visibility = View.VISIBLE
+                calculateButton.visibility = View.VISIBLE
+                desiredUnits.text = originalTimeSpinner.selectedItem.toString()
+            }
+        }
+
+        modifyTempButton.setOnClickListener {
+            if (originalTimeInput.text.isNullOrEmpty() || originalTempInput.text.isNullOrEmpty()) {
+                Toast.makeText(this, "Please enter temperature and cook time", Toast.LENGTH_LONG).show()
+            }
+            else {
+                isModifyingTime = false
+                desiredChangeTitle.text = "Desired Cook Temperature"
+                desiredInput.visibility = View.VISIBLE
+                desiredUnits.visibility = View.VISIBLE
+                calculateButton.visibility = View.VISIBLE
+                desiredUnits.text = originalTempSpinner.selectedItem.toString()
+            }
+        }
+
+        calculateButton.setOnClickListener {
+            if (desiredInput.text.isNullOrEmpty()) {
+                Toast.makeText(this, "Please enter a desired value", Toast.LENGTH_LONG).show()
+            }
+            else {
+                result.visibility = View.VISIBLE
+                if (isModifyingTime == true) {
+                    resultTitle.text = "NEW COOK TEMPERATURE"
+                    resultUnits.text = originalTempSpinner.selectedItem.toString()
+                    result.text = modifyCookTime(originalTempInput, originalTimeInput, desiredInput)
+                } else if (isModifyingTime == false) {
+                    resultTitle.text = "NEW COOK TIME"
+                    resultUnits.text = originalTimeSpinner.selectedItem.toString()
+                    result.text = modifyCookTemp(originalTempInput, originalTimeInput, desiredInput)
+                }
             }
         }
 
@@ -76,13 +95,8 @@ class CookTimeConversion : AppCompatActivity() {
     }
 
     private fun modifyCookTime(givenTemp: EditText, givenTime: EditText, desiredTime: EditText): String {
-        Log.d("OriginalTemp", "givenTemp: ${givenTemp.text}")
-        Log.d("originalTime", "givenTime: ${givenTime.text}")
-        Log.d("desiredTime", "desiredTime: ${desiredTime.text}")
         val timeDiff = givenTime.text.toString().toDouble() / desiredTime.text.toString().toDouble()
         val result = timeDiff * givenTemp.text.toString().toDouble()
-        Log.d("timeDiff", "timeDiff: $timeDiff")
-        Log.d("result", "result: $result")
         return result.toInt().toString()
     }
 
