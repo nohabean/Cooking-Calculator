@@ -1,56 +1,18 @@
-<!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
+# Cooking Calculator
 
-# AND101 Project 4 - CodeMath
+There are 2 different calculators available:
+- A measurement conversion calculator
+- A cook time and temperature calculator
 
-Submitted by: **Noah Dean**
+The measurement conversion calculator asks users to input standard cooking measurements and a number indicating how much they want to reduce or multiple the measurement by. Returned and displayed to the user is the new reduced measurements. This can be helping when trying to reduce measurements such as 1/4 cup in half, which would be 1/8 cup which does not exist. However, 1/8 cup is equal to 2 tablespoons, so this app would convert this and show 2 TBSP as the result.
 
-Time spent: **10** hours spent in total
+The cook time and remperature calculator asks users to enter their recipes cook time and temperature. The user can then choose to modify the cook temperature or modify the cook time. Next, the user will be prompted to enter the desired cook temperature or cook time depending on which button they clicked previously. The units will load automatically based on the previously selected input. After clicking the calculate button, the resulting new cook time or new cook temperature result will display with the appropriate units. This could be useful when in a time crunch and you need to cook faster than you have time for or if you are trying to cook two different dishes at the same time but the recipes are calling for different cook times and temperatures. 
 
-## Summary
-
-**Cooking Reduction Calculator** is an android app that **allows the user to input standard cooking measurements and enter a number to divide/reduce the measurement by.**
-
-If I had to describe this project in three (3) emojis, they would be: **🍳📏➗**
-
-## Application Features
-
-<!-- (This is a comment) Please be sure to change the [ ] to [x] for any features you completed.  If a feature is not checked [x], you might miss the points for that item! -->
-
-The following REQUIRED features are completed:
-
-- [X] At least one (1) user input
-- [X] At least one (1) interactive View
-- [X] At least one (1) output of a calculation based on the user input
-
-The following STRETCH features are implemented:
-
-- [ ] Implement ViewBinding to reduce boilerplate code and increase efficiency
-- [X] Add at least one (1) additional functionality
-
-The following EXTRA features are implemented:
-
-- [ ] List anything else that you added to improve the app!
-
-## Video Demo
-
-Here's a video / GIF that demos all of the app's implemented features:
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
-
-GIF created with **ScreenToGif**
-
-<!-- Recommended tools:
-- [Kap](https://getkap.co/) for macOS
-- [ScreenToGif](https://www.screentogif.com/) for Windows
-- [peek](https://github.com/phw/peek) for Linux. -->
-
-## Notes
-
-Here's a place for any other notes on the app, it's creation process, or what you learned this unit!
+<img src='https://github.com/nohabean/Cooking-Calculator/blob/main/cook_time_converter.gif' title='Cook Time Calculator' width='250px' alt='Cook Time Calculator Demo' />
 
 ## License
 
-Copyright **2023** **Noah Dean**
+Copyright **2024** **Noah Dean**
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
