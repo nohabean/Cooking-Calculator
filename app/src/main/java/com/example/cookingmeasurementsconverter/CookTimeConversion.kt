@@ -34,7 +34,6 @@ class CookTimeConversion : AppCompatActivity() {
         val desiredInput = findViewById<EditText>(R.id.desiredConversionEditText)
         var desiredUnits = findViewById<TextView>(R.id.desiredConversionUnits)
         desiredInput.visibility = View.INVISIBLE
-        desiredUnits.visibility = View.INVISIBLE
 
         val calculateButton = findViewById<Button>(R.id.calculateConversion)
         calculateButton.visibility = View.INVISIBLE
@@ -50,6 +49,12 @@ class CookTimeConversion : AppCompatActivity() {
             }
             else {
                 hideKeyboard()
+                desiredInput.text = null
+                resultTitle.text = null
+                result.text = null
+                resultUnits.text = null
+                result.visibility = View.INVISIBLE
+
                 isModifyingTime = true
                 desiredChangeTitle.text = "Desired Cook Time"
                 desiredInput.visibility = View.VISIBLE
@@ -65,6 +70,12 @@ class CookTimeConversion : AppCompatActivity() {
             }
             else {
                 hideKeyboard()
+                desiredInput.text = null
+                resultTitle.text = null
+                result.text = null
+                resultUnits.text = null
+                result.visibility = View.INVISIBLE
+
                 isModifyingTime = false
                 desiredChangeTitle.text = "Desired Cook Temperature"
                 desiredInput.visibility = View.VISIBLE
@@ -99,7 +110,9 @@ class CookTimeConversion : AppCompatActivity() {
         }
 
         val resetButton = findViewById<Button>(R.id.resetButton)
-
+        resetButton.setOnClickListener {
+            reset()
+        }
     }
 
     private fun modifyCookTime(givenTemp: EditText, givenTime: EditText, desiredTime: EditText): String {
@@ -112,6 +125,36 @@ class CookTimeConversion : AppCompatActivity() {
         val tempDiff = givenTemp.text.toString().toDouble() / desiredTemp.text.toString().toDouble()
         val result = tempDiff * givenTime.text.toString().toDouble()
         return result.toInt().toString()
+    }
+
+    private fun reset() {
+        val originalTempInput = findViewById<EditText>(R.id.originalTempEditText)
+        val originalTimeInput = findViewById<EditText>(R.id.originalTimeEditText)
+
+        val desiredChangeTitle = findViewById<TextView>(R.id.desiredConversion)
+        val desiredInput = findViewById<EditText>(R.id.desiredConversionEditText)
+        val desiredUnits = findViewById<TextView>(R.id.desiredConversionUnits)
+
+        val calculateButton = findViewById<Button>(R.id.calculateConversion)
+
+        val resultTitle = findViewById<TextView>(R.id.conversionResult)
+        val result = findViewById<TextView>(R.id.result)
+        val resultUnits = findViewById<TextView>(R.id.resultUnits)
+
+        originalTempInput.text = null
+        originalTimeInput.text = null
+
+        desiredChangeTitle.text = null
+        desiredInput.text = null
+        desiredUnits.text = null
+
+        resultTitle.text = null
+        result.text = null
+        resultUnits.text = null
+
+        desiredInput.visibility = View.INVISIBLE
+        calculateButton.visibility = View.INVISIBLE
+        result.visibility = View.INVISIBLE
     }
 
     private fun hideKeyboard() {
