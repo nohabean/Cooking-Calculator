@@ -3,6 +3,7 @@ package com.example.cookingmeasurementsconverter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -48,6 +49,7 @@ class CookTimeConversion : AppCompatActivity() {
                 Toast.makeText(this, "Please enter temperature and cook time", Toast.LENGTH_LONG).show()
             }
             else {
+                hideKeyboard()
                 isModifyingTime = true
                 desiredChangeTitle.text = "Desired Cook Time"
                 desiredInput.visibility = View.VISIBLE
@@ -62,6 +64,7 @@ class CookTimeConversion : AppCompatActivity() {
                 Toast.makeText(this, "Please enter temperature and cook time", Toast.LENGTH_LONG).show()
             }
             else {
+                hideKeyboard()
                 isModifyingTime = false
                 desiredChangeTitle.text = "Desired Cook Temperature"
                 desiredInput.visibility = View.VISIBLE
@@ -76,6 +79,7 @@ class CookTimeConversion : AppCompatActivity() {
                 Toast.makeText(this, "Please enter a desired value", Toast.LENGTH_LONG).show()
             }
             else {
+                hideKeyboard()
                 result.visibility = View.VISIBLE
                 if (isModifyingTime == true) {
                     resultTitle.text = "NEW COOK TEMPERATURE"
@@ -104,5 +108,10 @@ class CookTimeConversion : AppCompatActivity() {
         val tempDiff = givenTemp.text.toString().toDouble() / desiredTemp.text.toString().toDouble()
         val result = tempDiff * givenTime.text.toString().toDouble()
         return result.toInt().toString()
+    }
+
+    private fun hideKeyboard() {
+        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
     }
 }
