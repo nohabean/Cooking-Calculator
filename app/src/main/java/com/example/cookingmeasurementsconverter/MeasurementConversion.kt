@@ -46,6 +46,11 @@ class MeasurementConversion : AppCompatActivity() {
         resetButton.setOnClickListener {
             reset()
         }
+
+        val backButton = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
     }
 
     private fun changeSwitchState(switch: Switch, wholeEditText: EditText, fraction1EditText: EditText,
