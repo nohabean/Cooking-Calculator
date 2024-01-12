@@ -94,6 +94,10 @@ class CookTimeConversion : AppCompatActivity() {
         }
 
         val backButton = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
+
         val resetButton = findViewById<Button>(R.id.resetButton)
 
     }
